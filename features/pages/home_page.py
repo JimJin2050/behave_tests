@@ -29,3 +29,6 @@ class HomePage(Browser):
         self.fill(search_term, *HomePageLocator.SEARCH_FIELD)
         self.fill(Keys.ENTER, *HomePageLocator.SEARCH_FIELD)
         self.wait.until(EC.title_contains(search_term))
+
+    def sayHello(self):
+        print("hello my push")
