@@ -74,11 +74,13 @@ choice guidance base on your operating system.
 
 ##5. Git
 (1) Git download:
+
     Please verify if the git has been installed by command "git --version".
     Otherwise, you can download the install file from:
         https://git-scm.com/downloads
     
 (2) set git name and email:
+
     git config --global user.name 'your github username'
     git config --global user.email 'your github email'
     verify your name and email with below command:
@@ -86,36 +88,46 @@ choice guidance base on your operating system.
         git config user.email
 
 (3) Generate SSH key
+
    ssh-keygen -t rsa -C 'your github email'
 
 (4) Go to github and configure public key
+
   Go to users/yourname/.ssh on you computer, and copy the public key content.
   Go to github, and choice "Settings/SSH and GPG Keys/New SSH Key", paste your public key into it.
   
 (5) list branches:
+
     git branch
     The branch with asterisk is your current branch
     
 (6) switch branch
+
     git checkout branch_name
 
 (7) create branch
+
     Git checkout -b new_branch_name
     
 (8) git fetch -all
 
 (9) pull source codes
+
     git pull
     
 (10) check the info of current branch
+
     git status
 
 (11) add files to git
+
     git add README.md(The name of your files)
 
 (12) commit your updates
+
     git commit -m "your message"
 
 (13) push your updates
+
     git push <remote_hostname> <local_branch>:<remote_branch> 
     git push origin jim:jim
