@@ -70,5 +70,66 @@ choice guidance base on your operating system.
    Configure the tasks of deployment.
    Link to existing plan or a new plan.
 
+##5. Git
+(1) Git download:
+    Please verify if the git has been installed by command "git --version".
+    Otherwise, you can download the install file from:
+        https://git-scm.com/downloads
+    
+(2) set git name and email:
+    git config --global user.name 'your github username'
+    git config --global user.email 'your github email'
+    verify your name and email with below command:
+        git config user.name
+        git config user.email
+
+(3) Generate SSH key
+   ssh-keygen -t rsa -C 'your github email'
+
+(4) Go to github and configure public key
+  Go to users/yourname/.ssh on you computer, and copy the public key content.
+  Go to github, and choice "Settings/SSH and GPG Keys/New SSH Key", paste your public key into it.
+  
+(5) list branches:
+    git branch
+    The branch with asterisk is your current branch
+(6) switch branch
+    git checkout master
+(7) git
+
+git fetch --all
+git reset --hard origin/master
+
+git checkout nfv20
+git push origin nfv20:nfv20 --force
+
+git stash
+git pull
+git stash pop
+
+
+git reset test.py
+git checkout test.py
+
+git push origin :feature
+git stash list
+
+把本地的dev合并到master
+git checkout master
+git merge dev
+
+git branch -r -d origin/jim
+git push origin :jim
+
+git rm -r --cached .
+git add .
+git commit -m "update .gitignore"
+
+git branch --set-upstream-to=origin/nfvcli 
+
+cancel the merging:
+git reset --hard HEAD (or sha_1)  
+
+
 
 
