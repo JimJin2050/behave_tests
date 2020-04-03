@@ -61,7 +61,9 @@ choice guidance base on your operating system.
    Choose to run this job on "agent environment" or "Docker container"
    Create tasks or configure default tasks
    Define your task, for example, you need to define the command line if your task type is "command"
-
+   
+   To schedule your plan execution with trigger in plan configuration, "periodically" trigger is recommended.
+   
 (8) Run test plan
 
 (9) The view of result and logs
@@ -93,43 +95,27 @@ choice guidance base on your operating system.
 (5) list branches:
     git branch
     The branch with asterisk is your current branch
+    
 (6) switch branch
-    git checkout master
-(7) git
+    git checkout branch_name
 
-git fetch --all
-git reset --hard origin/master
+(7) create branch
+    Git checkout -b new_branch_name
+    
+(8) git fetch -all
 
-git checkout nfv20
-git push origin nfv20:nfv20 --force
+(9) pull source codes
+    git pull
+    
+(10) check the info of current branch
+    git status
 
-git stash
-git pull
-git stash pop
+(11) add files to git
+    git add README.md(The name of your files)
 
+(12) commit your updates
+    git commit -m "your message"
 
-git reset test.py
-git checkout test.py
-
-git push origin :feature
-git stash list
-
-把本地的dev合并到master
-git checkout master
-git merge dev
-
-git branch -r -d origin/jim
-git push origin :jim
-
-git rm -r --cached .
-git add .
-git commit -m "update .gitignore"
-
-git branch --set-upstream-to=origin/nfvcli 
-
-cancel the merging:
-git reset --hard HEAD (or sha_1)  
-
-
-
-
+(13) push your updates
+    git push <remote_hostname> <local_branch>:<remote_branch> 
+    git push origin jim:jim
