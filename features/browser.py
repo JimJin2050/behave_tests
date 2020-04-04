@@ -2,8 +2,9 @@ from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 
 class Browser(object):
-
-    driver = webdriver.Chrome()
+    options = webdriver.ChromeOptions()
+    options.add_argument("--headless")
+    driver = webdriver.Chrome(options=options)
     # driver = webdriver.Chrome() if you have set chromedriver in your PATH
     driver.implicitly_wait(30)
     driver.set_page_load_timeout(30)

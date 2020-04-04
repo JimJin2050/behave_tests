@@ -15,4 +15,4 @@ Feature: Search
         Examples:
         | search_term | search_result |
         | behave      | behave · PyPI |
-        | selenium    | Selenium automates browsers. That's it! |
+        #| selenium    | Selenium automates browsers. That's it! |
