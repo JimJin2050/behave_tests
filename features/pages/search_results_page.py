@@ -1,5 +1,5 @@
 from selenium.webdriver.common.by import By
-from features.browser import Browser
+from features.pages.base_page import BasePage
 
 class SearchResultsPageLocator(object):
     # Search Results Page Locators
@@ -7,7 +7,7 @@ class SearchResultsPageLocator(object):
     HEADER_TEXT = (By.XPATH, "//h1")
 
 
-class SearchResultsPage(Browser):
+class SearchResultsPage(BasePage):
     # Search Results Page Actions
 
     def get_element(self, *locator):
@@ -17,4 +17,5 @@ class SearchResultsPage(Browser):
         return self.driver.title
 
     def find_search_result(self, search_result):
-        return self.get_element(By.LINK_TEXT, search_result)
+        results = self.get_element(By.XPATH, "//a/em[contains(text(), '{}')]".format(search_result))
+        return results

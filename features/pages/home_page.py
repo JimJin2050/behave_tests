@@ -1,5 +1,5 @@
 from selenium.webdriver.common.by import By
-from features.browser import Browser
+from features.pages.base_page import BasePage
 #from browser import Browser
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
@@ -10,7 +10,7 @@ class HomePageLocator(object):
     SEARCH_FIELD = (By.ID, "kw")
 
 
-class HomePage(Browser):
+class HomePage(BasePage):
     # Home Page Actions
 
     def fill(self, text, *locator):
@@ -28,4 +28,5 @@ class HomePage(Browser):
     def search(self, search_term):
         self.fill(search_term, *HomePageLocator.SEARCH_FIELD)
         self.fill(Keys.ENTER, *HomePageLocator.SEARCH_FIELD)
+        self.wait_page_loaded()
         self.wait.until(EC.title_contains(search_term))
