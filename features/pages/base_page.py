@@ -1,3 +1,5 @@
+import random
+from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -8,7 +10,12 @@ class BasePage(object):
         self.driver.implicitly_wait(30)
         self.driver.set_page_load_timeout(30)
         #self.driver.maximize_window()
+        self.driver.set_window_size(800, 600)
+        if isinstance(self.driver, webdriver.chrome.webdriver.WebDriver):
+            self.driver.set_window_position(500, 50)
+
         self.wait = WebDriverWait(driver, 60)
+
 
     def wait_page_loaded(self):
         self.wait.until(PageLoaded())
